@@ -12,7 +12,6 @@ public class ObjectsCollider : MonoBehaviour
             Destroy(other.gameObject);
             createBigmac.bigmacs.Remove(other.gameObject);
             movements.Grow();
-            Debug.Log("collision");
         }
     }
 }

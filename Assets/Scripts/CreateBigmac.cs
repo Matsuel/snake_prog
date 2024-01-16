@@ -12,9 +12,17 @@ public class CreateBigmac : MonoBehaviour
     public bool isAlive = true;
     public List<GameObject> bigmacs = new List<GameObject>();
     public List<GameObject> bigmacsToDestroy = new List<GameObject>();
+
+    public Sprite bigmacSprite;
+    public Sprite bananaSprite;
+    public Sprite cocacolaSprite;
+    private List<Sprite> sprites = new List<Sprite>();
     // Start is called before the first frame update
     void Start()
     {
+        sprites.Add(bigmacSprite);
+        sprites.Add(bananaSprite);
+        sprites.Add(cocacolaSprite);
         StartCoroutine(createBigmac());
     }
 
@@ -27,7 +35,9 @@ public class CreateBigmac : MonoBehaviour
     IEnumerator createBigmac(){
         while(isAlive){
             yield return new WaitForSeconds(0.5f);
+            int random = Random.Range(0,3);
             GameObject newBigmac = Instantiate(bigmac);
+            newBigmac.GetComponent<SpriteRenderer>().sprite = sprites[random];
             newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
             bigmacs.Add(newBigmac);
         }
