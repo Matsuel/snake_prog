@@ -40,16 +40,16 @@ public class Movements : MonoBehaviour
             if (move == "up")
             {
                 //rajout pour espace entre les segments rappel pour quand il y aura une grille
-                segments[i].position = new Vector2(x, y - 0.5f);
+                segments[i].position = new Vector2(x, y - 1.2f);
             }else if (move == "down")
             {
-                segments[i].position = new Vector2(x, y + 0.5f);
+                segments[i].position = new Vector2(x, y + 1.2f);
             }else if (move == "left")
             {
-                segments[i].position = new Vector2(x + 0.5f, y);
+                segments[i].position = new Vector2(x + 1.2f, y);
             }else if (move == "right")
             {
-                segments[i].position = new Vector2(x - 0.5f, y);
+                segments[i].position = new Vector2(x - 1.2f, y);
             }
         }
         //mode ez
