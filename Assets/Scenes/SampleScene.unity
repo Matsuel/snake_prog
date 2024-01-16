@@ -383,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   createBigmac: {fileID: 394148041}
   movements: {fileID: 862973721}
+  segment: {fileID: 9001469797079748036, guid: 90c14eb6bd174094dbc1ab9aad97889f, type: 3}
 --- !u!61 &862973723
 BoxCollider2D:
   m_ObjectHideFlags: 0
