@@ -10,8 +10,8 @@ public class CreateBigmac : MonoBehaviour
     public float maxY = 4.5f;
     public float minY = -4.5f;
     public bool isAlive = true;
-    List<GameObject> bigmacs = new List<GameObject>();
-    List<GameObject> bigmacsToDestroy = new List<GameObject>();
+    public List<GameObject> bigmacs = new List<GameObject>();
+    public List<GameObject> bigmacsToDestroy = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {

@@ -173,6 +173,8 @@ MonoBehaviour:
   maxY: 4.5
   minY: -4.5
   isAlive: 1
+  bigmacs: []
+  bigmacsToDestroy: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7491e407824184cbc1f294d156b9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  createBigmac: {fileID: 394148041}
 --- !u!61 &862973723
 BoxCollider2D:
   m_ObjectHideFlags: 0
