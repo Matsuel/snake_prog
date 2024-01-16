@@ -26,9 +26,8 @@ public class CreateBigmac : MonoBehaviour
 
     IEnumerator createBigmac(){
         while(isAlive){
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(0.5f);
             GameObject newBigmac = Instantiate(bigmac);
-            // Debug.Log(newBigmac.GetComponent<Renderer>().bounds.size);
             newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
             bigmacs.Add(newBigmac);
         }
