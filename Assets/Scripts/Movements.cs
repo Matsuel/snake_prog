@@ -22,19 +22,19 @@ public class Movements : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow) && direction.x !=0)
+        if(Input.GetKeyDown(KeyCode.Z) && direction.x !=0)
         {
             direction = Vector2.up;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && direction.x != 0)
+        else if (Input.GetKeyDown(KeyCode.S) && direction.x != 0)
         {
             direction = Vector2.down;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && direction.y != 0)
+        else if (Input.GetKeyDown(KeyCode.Q) && direction.y != 0)
         {
             direction = Vector2.left;
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && direction.y != 0)
+        else if (Input.GetKeyDown(KeyCode.D) && direction.y != 0)
         {
             direction = Vector2.right;
         }
