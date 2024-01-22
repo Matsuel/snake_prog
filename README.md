@@ -20,4 +20,4 @@ Ce projet a pour but de créer un jeu de snake en C# avec Unity.
 
 ## Crédits
 
-Jeu réalisé par [Matsuel]("https://github.com/Matsuel") et [Lytzeer]("https://github.com/Lytzeer")
+Jeu réalisé par [Matsuel]("https://www.github.com/Matsuel") et [Lytzeer]("https://www.github.com/Lytzeer")
