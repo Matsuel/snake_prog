@@ -231,7 +231,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -272,10 +272,10 @@ GameObject:
   m_Component:
   - component: {fileID: 862973720}
   - component: {fileID: 862973719}
-  - component: {fileID: 862973721}
   - component: {fileID: 862973723}
   - component: {fileID: 862973722}
   - component: {fileID: 862973724}
+  - component: {fileID: 862973725}
   m_Layer: 0
   m_Name: Mover
   m_TagString: Untagged
@@ -350,25 +350,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &862973721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862973718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb509ddccc122a499f8315ca695af0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  maxX: 10.2
-  minX: -10.2
-  maxY: 4.5
-  minY: -4.5
-  segments: []
-  Segment: {fileID: 9001469797079748036, guid: 90c14eb6bd174094dbc1ab9aad97889f, type: 3}
 --- !u!114 &862973722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createBigmac: {fileID: 394148041}
-  movements: {fileID: 862973721}
+  snake: {fileID: 862973725}
   segment: {fileID: 9001469797079748036, guid: 90c14eb6bd174094dbc1ab9aad97889f, type: 3}
 --- !u!61 &862973723
 BoxCollider2D:
@@ -431,3 +412,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!114 &862973725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862973718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb509ddccc122a499f8315ca695af0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxX: 20.6
+  minX: -20.6
+  maxY: 9.5
+  minY: -9.5
+  segment: {fileID: 9001469797079748036, guid: 90c14eb6bd174094dbc1ab9aad97889f, type: 3}
