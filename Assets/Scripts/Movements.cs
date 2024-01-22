@@ -22,7 +22,7 @@ public class Movements : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Z) && direction.x !=0)
+        if (Input.GetKeyDown(KeyCode.Z) && direction.x != 0)
         {
             direction = Vector2.up;
         }
@@ -42,7 +42,7 @@ public class Movements : MonoBehaviour
 
     void FixedUpdate()
     {
-        for(int i=segments.Count-1; i>0; i--)
+        for (int i = segments.Count - 1; i > 0; i--)
         {
             segments[i].position = segments[i - 1].position;
         }
