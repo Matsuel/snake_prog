@@ -5,97 +5,62 @@ using System.Threading;
 
 public class Movements : MonoBehaviour
 {
-    public float speed = 30f;
-    public float maxX = 10.2f;
-    public float minX = -10.2f;
-    public float maxY = 4.5f;
-    public float minY = -4.5f;
-    private string move = "";
-    public List<Transform> segments = new List<Transform>();
-    [SerializeField] Transform Segment;
-    // Start is called before the first frame update
+    private float minX = -20.6f;
+    private float maxX = 20.6f;
+    private float maxY = 9.5f;
+    private float minY = -9.5f;
+    Vector2 direction;
+    List<Transform> segments = new List<Transform>();
+    public Transform segment;
+
     void Start()
     {
         Time.timeScale = 0.25f;
+        direction = Vector2.right;
         segments.Add(transform);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 position = transform.position;
-        setMove();
-        makeMove();
-        //hard mode
-        // si on sort de l'écran on meurt
+        if(Input.GetKeyDown(KeyCode.UpArrow) && direction.x !=0)
+        {
+            direction = Vector2.up;
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && direction.x != 0)
+        {
+            direction = Vector2.down;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && direction.y != 0)
+        {
+            direction = Vector2.left;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && direction.y != 0)
+        {
+            direction = Vector2.right;
+        }
     }
 
     void FixedUpdate()
     {
-
-        for (int i = segments.Count - 1; i > 0; i--)
+        for(int i=segments.Count-1; i>0; i--)
         {
-            float x = segments[i - 1].position.x;
-            float y = segments[i - 1].position.y;
-            if (move == "up")
-            {
-                //rajout pour espace entre les segments rappel pour quand il y aura une grille
-                segments[i].position = new Vector2(x, y - 1.2f);
-            }else if (move == "down")
-            {
-                segments[i].position = new Vector2(x, y + 1.2f);
-            }else if (move == "left")
-            {
-                segments[i].position = new Vector2(x + 1.2f, y);
-            }else if (move == "right")
-            {
-                segments[i].position = new Vector2(x - 1.2f, y);
-            }
+            segments[i].position = segments[i - 1].position;
         }
+
+        float x = Mathf.Round(transform.position.x) + direction.x;
+        float y = Mathf.Round(transform.position.y) + direction.y;
+
+        transform.position = new Vector2(x, y);
+
         //mode ez
         ezModeOnExitScreen();
     }
 
-    void setMove()
+    public void Grow()
     {
-        switch (Input.inputString)
-        {
-            case "z":
-                move = "up";
-                break;
-            case "s":
-                move = "down";
-                break;
-            case "q":
-                move = "left";
-                break;
-            case "d":
-                move = "right";
-                break;
-        }
-    }
-
-    void makeMove()
-    {
-        switch (move)
-        {
-            case "up":
-                Vector2 up = new Vector2(transform.position.x, transform.position.y + speed * Time.deltaTime);
-                transform.position = up;
-                break;
-            case "down":
-                Vector2 down = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
-                transform.position = down;
-                break;
-            case "left":
-                Vector2 left = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
-                transform.position = left;
-                break;
-            case "right":
-                Vector2 right = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
-                transform.position = right;
-                break;
-        }
+        Transform segment = Instantiate(this.segment);
+        segment.position = segments[segments.Count - 1].position;
+        segments.Add(segment);
     }
 
     void ezModeOnExitScreen()
@@ -121,12 +86,5 @@ public class Movements : MonoBehaviour
             Vector2 up = new Vector2(position.x, maxY);
             transform.position = up;
         }
-    }
-
-    public void Grow()
-    {
-        Transform segment = Instantiate(Segment);
-        segment.position = segments[segments.Count - 1].position;
-        segments.Add(segment);
     }
 }
