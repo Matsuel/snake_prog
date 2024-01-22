@@ -9,6 +9,7 @@ public class Movements : MonoBehaviour
     private float maxX = 21.5f;
     private float maxY = 10.3f;
     private float minY = -10.3f;
+    public int score=0;
     Vector2 direction;
     List<Transform> segments = new List<Transform>();
     public Transform segment;
