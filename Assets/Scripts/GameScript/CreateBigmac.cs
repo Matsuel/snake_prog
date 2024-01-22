@@ -29,17 +29,16 @@ public class CreateBigmac : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            
+
     }
 
-    IEnumerator createBigmac(){
-        while(isAlive){
-            int random = Random.Range(0,3);
-            GameObject newBigmac = Instantiate(bigmac);
-            newBigmac.GetComponent<SpriteRenderer>().sprite = sprites[random];
-            newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-            bigmacs.Add(newBigmac);
-            yield return new WaitForSeconds(0.5f);
-        }
+    public IEnumerator createBigmac()
+    {
+        int random = Random.Range(0, 3);
+        GameObject newBigmac = Instantiate(bigmac);
+        newBigmac.GetComponent<SpriteRenderer>().sprite = sprites[random];
+        newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        bigmacs.Add(newBigmac);
+        yield return new WaitForSeconds(0.5f);
     }
 }

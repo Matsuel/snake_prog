@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjectsCollider : MonoBehaviour
 {
@@ -12,11 +13,11 @@ public class ObjectsCollider : MonoBehaviour
         if(other.gameObject.tag == "Objects"){
             Destroy(other.gameObject);
             snake.Grow();
+            createBigmac.StartCoroutine(createBigmac.createBigmac());
             snake.score++;
+        }else if (other.gameObject.tag=="Segment"){
+            Debug.Log("t'as perdu");
+            // SceneManager.LoadScene(1);            
         }
-        // else if (other.gameObject.tag=="Segment"){
-        //     // Debug.Log("t'as perdu");
-        //     // C'est là qu'on changerz la scène
-        // }
     }
 }
