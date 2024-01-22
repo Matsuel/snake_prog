@@ -5,10 +5,10 @@ using System.Threading;
 
 public class Movements : MonoBehaviour
 {
-    private float minX = -20.6f;
-    private float maxX = 20.6f;
-    private float maxY = 9.5f;
-    private float minY = -9.5f;
+    private float minX = -21.5f;
+    private float maxX = 21.5f;
+    private float maxY = 10.3f;
+    private float minY = -10.3f;
     Vector2 direction;
     List<Transform> segments = new List<Transform>();
     public Transform segment;
