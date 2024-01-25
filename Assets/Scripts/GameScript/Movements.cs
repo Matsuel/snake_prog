@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class Movements : MonoBehaviour
 {
@@ -55,6 +56,8 @@ public class Movements : MonoBehaviour
 
         //mode ez
         ezModeOnExitScreen();
+        //mode hard
+        // hardModeOnExitScreen();
     }
 
     public void Grow()
@@ -86,6 +89,16 @@ public class Movements : MonoBehaviour
         {
             Vector2 up = new Vector2(position.x, maxY);
             transform.position = up;
+        }
+    }
+
+    void hardModeOnExitScreen()
+    {
+        Vector2 position = transform.position;
+        if (position.x > maxX || position.x < minX || position.y > maxY || position.y < minY)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene(1);
         }
     }
 }

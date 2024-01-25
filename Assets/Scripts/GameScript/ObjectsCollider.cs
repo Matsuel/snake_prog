@@ -18,6 +18,9 @@ public class ObjectsCollider : MonoBehaviour
         }else if (other.gameObject.tag=="Segment"){
             Debug.Log("t'as perdu");
             // SceneManager.LoadScene(1);            
+        }else if(other.gameObject.tag == "Wall"){
+            Debug.Log("t'as tapé un mur");
+            // SceneManager.LoadScene(1);
         }
     }
 }
