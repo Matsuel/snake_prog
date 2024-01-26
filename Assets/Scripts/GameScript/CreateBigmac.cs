@@ -21,7 +21,6 @@ public class CreateBigmac : MonoBehaviour
     void Start()
     {
         sprites.Add(bigmacSprite);
-        sprites.Add(bananaSprite);
         sprites.Add(cocacolaSprite);
         StartCoroutine(createBigmac());
     }
@@ -34,11 +33,24 @@ public class CreateBigmac : MonoBehaviour
 
     public IEnumerator createBigmac()
     {
-        int random = Random.Range(0, 3);
-        GameObject newBigmac = Instantiate(bigmac);
-        newBigmac.GetComponent<SpriteRenderer>().sprite = sprites[random];
-        newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-        bigmacs.Add(newBigmac);
-        yield return new WaitForSeconds(0.5f);
+        int randomMagic = Random.Range(0, 25);
+        if (randomMagic == 22 || randomMagic == 13)
+        {
+            GameObject newBigmac = Instantiate(bigmac);
+            newBigmac.tag = "Magic";
+            newBigmac.GetComponent<SpriteRenderer>().sprite = bananaSprite;
+            newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+            bigmacs.Add(newBigmac);
+            yield return new WaitForSeconds(0.5f);
+        }
+        else
+        {
+            int random = Random.Range(0, 2);
+            GameObject newBigmac = Instantiate(bigmac);
+            newBigmac.GetComponent<SpriteRenderer>().sprite = sprites[random];
+            newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+            bigmacs.Add(newBigmac);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Objects
   - Segment
   - Wall
+  - Magic
   layers:
   - Default
   - TransparentFX
