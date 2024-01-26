@@ -30,6 +30,9 @@ public class ObjectsCollider : MonoBehaviour
                 snake.Grow();
             }
             createBigmac.StartCoroutine(createBigmac.createBigmac());
+        }else if (other.gameObject.tag == "Sapeur"){
+            Debug.Log("t'as tapé un sapeur");
+            SceneManager.LoadScene(1);
         }
     }
 }

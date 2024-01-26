@@ -5,6 +5,7 @@ using UnityEngine;
 public class CreateBigmac : MonoBehaviour
 {
     public GameObject bigmac;
+    public GameObject sapeur;
     private float minX = -20.5f;
     private float maxX = 20.5f;
     private float maxY = 9.2f;
@@ -45,12 +46,19 @@ public class CreateBigmac : MonoBehaviour
         }
         else
         {
-            int random = Random.Range(0, 2);
-            GameObject newBigmac = Instantiate(bigmac);
-            newBigmac.GetComponent<SpriteRenderer>().sprite = sprites[random];
+            GameObject newBigmac = Instantiate(sapeur);
             newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
             bigmacs.Add(newBigmac);
             yield return new WaitForSeconds(0.5f);
         }
+        // else
+        // {
+        //     int random = Random.Range(0, 2);
+        //     GameObject newBigmac = Instantiate(bigmac);
+        //     newBigmac.GetComponent<SpriteRenderer>().sprite = sprites[random];
+        //     newBigmac.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        //     bigmacs.Add(newBigmac);
+        //     yield return new WaitForSeconds(0.5f);
+        // }
     }
 }
