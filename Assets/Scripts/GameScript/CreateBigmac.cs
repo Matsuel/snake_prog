@@ -5,10 +5,10 @@ using UnityEngine;
 public class CreateBigmac : MonoBehaviour
 {
     public GameObject bigmac;
-    private float minX = -21f;
-    private float maxX = 21f;
-    private float maxY = 10f;
-    private float minY = -10f;
+    private float minX = -20.5f;
+    private float maxX = 20.5f;
+    private float maxY = 9.2f;
+    private float minY = -9.2f;
     public bool isAlive = true;
     public List<GameObject> bigmacs = new List<GameObject>();
     public List<GameObject> bigmacsToDestroy = new List<GameObject>();

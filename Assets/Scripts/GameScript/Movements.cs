@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Movements : MonoBehaviour
 {
-    private float minX = -21.5f;
-    private float maxX = 21.5f;
-    private float maxY = 10.3f;
-    private float minY = -10.3f;
+    private float minX = -20.5f;
+    private float maxX = 20.5f;
+    private float maxY = 9.2f;
+    private float minY = -9.2f;
     public int score=0;
     Vector2 direction;
     List<Transform> segments = new List<Transform>();
