@@ -15,9 +15,6 @@ public class ObjectsCollider : MonoBehaviour
             snake.Grow();
             createBigmac.StartCoroutine(createBigmac.createBigmac());
             snake.score++;
-        }else if (other.gameObject.tag=="Segment"){
-            Debug.Log("t'as perdu");
-            // SceneManager.LoadScene(1);            
         }else if(other.gameObject.tag == "Wall"){
             Debug.Log("t'as tapé un mur");
             // SceneManager.LoadScene(1);
