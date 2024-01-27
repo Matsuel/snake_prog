@@ -17,6 +17,9 @@ public class Movements : MonoBehaviour
 
     void Start()
     {
+        // mode impossible
+        // Time.timeScale = 0.5f;
+        // mode hard et ez
         Time.timeScale = 0.25f;
         direction = Vector2.right;
         segments.Add(transform);
