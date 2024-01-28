@@ -85,10 +85,10 @@ public class CreateBigmac : MonoBehaviour
     private void CreateObstacles()
     {
         int random = 0;
-        if (snake.mod.mode == "ez")
+        if (snake.mode == "ez")
         {
             random = Random.Range(1, 12);
-        }else if (snake.mod.mode == "hard")
+        }else if (snake.mode == "hard")
         {
             random = Random.Range(6, 12);
         }else{

@@ -22,15 +22,15 @@ public class Movements : MonoBehaviour
     void Start()
     {
         mod = GameObject.FindObjectOfType<Mod>();
-        if(mod.mode == "ez"){
-            mode = "ez";
-            Time.timeScale = 0.25f;
-        }else if(mod.mode == "hard"){
+        if(mod.mode == "hard"){
             mode = "hard";
             Time.timeScale = 0.25f;
         }else if(mod.mode == "impossible"){
             mode = "impossible";
             Time.timeScale = 0.5f;
+        }else{
+            mode = "ez";
+            Time.timeScale = 0.25f;
         }
         direction = Vector2.right;
         segments.Add(transform);

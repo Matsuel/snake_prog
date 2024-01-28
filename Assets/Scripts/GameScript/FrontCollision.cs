@@ -17,6 +17,7 @@ public class FrontCollision : MonoBehaviour
         boom.Play();
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(boom.clip.length);
+        Destroy(GameObject.FindObjectOfType<Mod>().gameObject);
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
