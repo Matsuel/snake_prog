@@ -19,7 +19,7 @@ public class CreateBigmac : MonoBehaviour
     public Sprite cocacolaSprite;
     private List<Sprite> sprites = new List<Sprite>();
     private bool isBomb = false;
-    public string mode = "ez";
+    public Movements snake;
     
     void Start()
     {
@@ -85,11 +85,14 @@ public class CreateBigmac : MonoBehaviour
     private void CreateObstacles()
     {
         int random = 0;
-        if (mode == "ez")
+        if (snake.mod.mode == "ez")
         {
             random = Random.Range(1, 12);
+        }else if (snake.mod.mode == "hard")
+        {
+            random = Random.Range(6, 12);
         }else{
-            random = Random.Range(7, 17);
+            random = Random.Range(12, 20);
         }
         for (int i = 0; i < random; i++)
         {

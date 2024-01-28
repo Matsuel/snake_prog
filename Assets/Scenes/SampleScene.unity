@@ -359,6 +359,7 @@ MonoBehaviour:
   bigmacSprite: {fileID: 21300000, guid: abb6d06b285047247b87847d7390a6d0, type: 3}
   bananaSprite: {fileID: 21300000, guid: 2d33a9cc54027c7468e7f9dc456fddc5, type: 3}
   cocacolaSprite: {fileID: 21300000, guid: 6df62c9dd580b3a4a963f0e243ac994c, type: 3}
+  snake: {fileID: 862973725}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +457,7 @@ GameObject:
   - component: {fileID: 786411620}
   m_Layer: 0
   m_Name: Right Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1054,6 +1055,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   segment: {fileID: 9001469797079748036, guid: 90c14eb6bd174094dbc1ab9aad97889f, type: 3}
+  mode: ez
+  mod: {fileID: 0}
 --- !u!82 &862973726
 AudioSource:
   m_ObjectHideFlags: 0

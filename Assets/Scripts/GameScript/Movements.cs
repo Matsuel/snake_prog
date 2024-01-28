@@ -15,12 +15,23 @@ public class Movements : MonoBehaviour
     List<Transform> segments = new List<Transform>();
     public Transform segment;
 
+    public string mode = "ez";
+
+    public Mod mod;
+
     void Start()
     {
-        // mode impossible
-        // Time.timeScale = 0.5f;
-        // mode hard et ez
-        Time.timeScale = 0.25f;
+        mod = GameObject.FindObjectOfType<Mod>();
+        if(mod.mode == "ez"){
+            mode = "ez";
+            Time.timeScale = 0.25f;
+        }else if(mod.mode == "hard"){
+            mode = "hard";
+            Time.timeScale = 0.25f;
+        }else if(mod.mode == "impossible"){
+            mode = "impossible";
+            Time.timeScale = 0.5f;
+        }
         direction = Vector2.right;
         segments.Add(transform);
     }
@@ -57,10 +68,10 @@ public class Movements : MonoBehaviour
 
         transform.position = new Vector2(x, y);
 
-        //mode ez
-        ezModeOnExitScreen();
-        //mode hard
-        // hardModeOnExitScreen();
+        if (mode == "ez")
+        {
+            ezModeOnExitScreen();
+        }
     }
 
     public void Grow()
@@ -92,16 +103,6 @@ public class Movements : MonoBehaviour
         {
             Vector2 up = new Vector2(position.x, maxY);
             transform.position = up;
-        }
-    }
-
-    void hardModeOnExitScreen()
-    {
-        Vector2 position = transform.position;
-        if (position.x > maxX || position.x < minX || position.y > maxY || position.y < minY)
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene(1);
         }
     }
 }

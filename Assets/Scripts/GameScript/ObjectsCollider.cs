@@ -18,7 +18,7 @@ public class ObjectsCollider : MonoBehaviour
             snake.Grow();
             createBigmac.StartCoroutine(createBigmac.createBigmac());
             snake.score++;
-        }else if(other.gameObject.tag == "Wall" && mode != "ez"){
+        }else if(other.gameObject.tag == "Wall" && snake.mod.mode != "ez"){
             StartCoroutine(LoadScene());
         }else if (other.gameObject.tag == "Magic"){
             magic.Play();
@@ -40,6 +40,7 @@ public class ObjectsCollider : MonoBehaviour
         boom.Play();
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(boom.clip.length);
+        Destroy(GameObject.FindObjectOfType<Mod>().gameObject);
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
