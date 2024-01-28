@@ -352,8 +352,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigmac: {fileID: 7869706849473775823, guid: 731e236faddba5044a46074b37fcf0fa, type: 3}
   sapeur: {fileID: 5363077500945839665, guid: 4c486c3aabf72df43a98e737986dd0f8, type: 3}
+  obstacle: {fileID: 1285616840169335760, guid: a75ca9c4e3101994f85766578126b0cb, type: 3}
   isAlive: 1
   bombs: []
+  obstacles: []
   bigmacSprite: {fileID: 21300000, guid: abb6d06b285047247b87847d7390a6d0, type: 3}
   bananaSprite: {fileID: 21300000, guid: 2d33a9cc54027c7468e7f9dc456fddc5, type: 3}
   cocacolaSprite: {fileID: 21300000, guid: 6df62c9dd580b3a4a963f0e243ac994c, type: 3}

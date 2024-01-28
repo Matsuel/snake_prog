@@ -10,6 +10,7 @@ TagManager:
   - Magic
   - Sapeur
   - Front
+  - Obstacles
   layers:
   - Default
   - TransparentFX

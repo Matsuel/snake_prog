@@ -31,6 +31,8 @@ public class ObjectsCollider : MonoBehaviour
             createBigmac.StartCoroutine(createBigmac.createBigmac());
         }else if (other.gameObject.tag == "Sapeur"){
             StartCoroutine(LoadScene());
+        }else if (other.gameObject.tag == "Obstacles"){
+            StartCoroutine(LoadScene());
         }
     }
 
