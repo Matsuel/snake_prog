@@ -18,18 +18,23 @@ public class Movements : MonoBehaviour
     public string mode = "ez";
 
     public Mod mod;
+    public AudioSource elevatorMusic;
+    public AudioSource tacoMusic;
 
     void Start()
     {
         mod = GameObject.FindObjectOfType<Mod>();
         if(mod.mode == "hard"){
             mode = "hard";
+            elevatorMusic.Play();
             Time.timeScale = 0.25f;
         }else if(mod.mode == "impossible"){
             mode = "impossible";
+            tacoMusic.Play();
             Time.timeScale = 0.5f;
         }else{
             mode = "ez";
+            elevatorMusic.Play();
             Time.timeScale = 0.25f;
         }
         direction = Vector2.right;

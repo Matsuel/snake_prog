@@ -92,7 +92,7 @@ public class CreateBigmac : MonoBehaviour
         {
             random = Random.Range(6, 12);
         }else{
-            random = Random.Range(12, 20);
+            random = Random.Range(12, 16);
         }
         for (int i = 0; i < random; i++)
         {
