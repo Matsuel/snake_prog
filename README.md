@@ -6,12 +6,11 @@ Ce projet a pour but de créer un jeu de snake en C# avec Unity.
 
 -  3 Scenes
   - Menu
-  - Settings
   - Game
 - 3 Difficultés
   - Easy
-  - Medium
   - Hard
+  - Impossible
 - Gestions des scores
 - Gestion des sons
 - Écran de fin de partie
